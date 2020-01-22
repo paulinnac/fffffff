@@ -10,6 +10,7 @@ import { AdminTopicsComponent } from './admin-topics/admin-topics.component';
 import { AdminSlackComponent } from './admin-slack/admin-slack.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
     AdminTopicsComponent,
     AdminSlackComponent,
     DashboardComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
