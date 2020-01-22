@@ -1,1 +1,45 @@
-<p>admin-birthdays works!</p>
+<div class="container">
+    <div class="jumbotron">
+        <h2>{{month}}'s birthdays</h2>
+    </div>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Day of the month</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">
+                    <button type="button" class="btn btn-primary"
+                    (click)="addBirthday(firstName.value, lastName.value, day.value);
+                    firstName.value='';
+                    lastName.value='';
+                    day.value=''">Add</button>
+                </th>
+                <td><input #firstName class="form-control" placeholder="John" type="text"></td>
+                <td><input #lastName class="form-control" placeholder="Doe" type="text"></td>
+                <td><input #day class="form-control" placeholder="1" type="number"></td>
+            </tr>
+            <tr *ngFor="let birthdayBoy of mockBirthdays; let i = index">
+                <th scope="row">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-warning"
+                    (click)="editBirthday(i)">Edit</button>
+                    <button type="button" class="btn btn-danger"
+                    (click)="removeBirthday(i)">Delete</button>
+                    </div>
+                    
+                </th>
+                <td>{{birthdayBoy.firstName}}</td>
+                <td>{{birthdayBoy.lastName}}</td>
+                <td>{{birthdayBoy.day}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
