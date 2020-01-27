@@ -25,13 +25,8 @@ export class AdminImagesComponent implements OnInit {
   fileChange(fileInput: any) {
     this.urls = [];
     console.log(fileInput);
-    this.selectedFile = <File>fileInput.target.files;
-    this.preview(this.selectedFile);
-  }
-
-  /*detectFiles(event){
-    this.urls = [];
-    let files = event.target.files;
+    let files= fileInput.target.files;
+    //this.preview(this.selectedFile);
     if(files){
       for (let file of files) {
         let reader = new FileReader();
@@ -41,22 +36,6 @@ export class AdminImagesComponent implements OnInit {
         reader.readAsDataURL(file);
       }
     }
-  }*/
-
-  //Show image preview
-  preview(files:any){
-    var mimeType = this.selectedFile.type;
-    if (mimeType.match(/image\/*/) == null){
-      return;
-    }
-    for( let file of files){
-    var reader = new FileReader();
-    reader.readAsDataURL(this.selectedFile);
-    reader.onload = (e: any) => {
-      this.urls.push(e.target.result);
-      //this.previewUrl = reader.result;
-    }
-  }
   }
 
   onUpload(){

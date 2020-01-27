@@ -5,14 +5,17 @@
               type="file"
               accept="image/*"
               multiple
-              (change)="fileChange($event)" #fileInput><br><!--For reacting to changes on file slection-->
-              <button (click)="fileInput.click()">Select files</button>
+              (change)="fileChange($event)" 
+              enctype="multipart/form-data"
+              #fileInput><br><!--For reacting to changes on file slection-->
+              
+            <!--<button (click)="fileInput.click()">Select files</button>-->  
               <div 
               *ngIf="fileUploadProgress">
                      Upload progress: {{ fileUploadProgress }}
               </div>
               <div *ngFor="let url of urls" class="image-preview mb-3" >
-                            <img [src]="url" height="160"/>
+                            <img [src]="url" height="160" width:auto/><br><br>
               </div>
               <div class="mb-3" *ngIf="uploadedFilePath">
                      {{uploadedFilePath}}
