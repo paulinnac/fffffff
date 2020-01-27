@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminTopicsComponent implements OnInit {
 
+  topics: Topic[];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  updateTopics(topics: Topic[]) {
+    this.topics = topics;
+  }
+
+}
+class Topic{
+  dueDate: string;
+  description: String;
 }
