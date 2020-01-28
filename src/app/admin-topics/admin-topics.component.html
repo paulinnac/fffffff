@@ -1,13 +1,14 @@
-<div><!--*ngIf="topics"-->
+<div *ngIf="topics">
     <h1>Topics Due Date</h1>
-    <table>
+    <table id="topicsTable">
         <th>DueDate</th>
         <th>Description</th>
         <th>Link</th>
-        <tr *ngFor="let topic of topics" #topic>
-            <td><input type="date" value="{{topic.dueDate}}" #dueDate></td>
-            <td><input type="text" value="{{topic.description}}" #description></td>
-            <td><input type="text" value="{{topic.link}}" #link></td>
+        <tr *ngFor="let topic of topics">
+            <td><input type="date" value="{{topic.dueDate}}"></td>
+            <td><input type="text" value="{{topic.description}}"></td>
+            <td><input type="text" value="{{topic.link}}"></td>
+            <!--td><input type="text" [(ngModel)]="topic.link" #link></td-->
             <!--td>{{topic.dueDate}}</!--td><td><a href="{{topic.description}}">{{topic.description}}</a></td-->
         </tr>
     </table>
