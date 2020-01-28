@@ -1,1 +1,14 @@
-<p>admin-education works!</p>
+<div *ngIf="courses">
+    <h1>Education Due Date</h1>
+    <table id="coursesTable">
+        <th>DueDate</th>
+        <th>Description</th>
+        <th>Link</th>
+        <tr *ngFor="let course of courses">
+            <td><input type="date" value="{{course.dueDate}}"></td>
+            <td><input type="text" value="{{course.description}}"></td>
+            <td><input type="text" value="{{course.link}}"></td>
+        </tr>
+    </table>
+    <button (click)="updateCourses()">Update</button>
+</div>
