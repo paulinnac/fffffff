@@ -11,6 +11,9 @@ import { AdminSlackComponent } from './admin-slack/admin-slack.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { DashCarouselComponent } from './dashboard/dash-carousel/dash-carousel.component';
+import { DashDateComponent } from './dashboard/dash-date/dash-date.component';
+import { DashBirthdaysComponent } from './dashboard/dash-birthdays/dash-birthdays.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AdminSlackComponent,
     DashboardComponent,
     AdminMenuComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DashCarouselComponent,
+    DashDateComponent,
+    DashBirthdaysComponent
   ],
   imports: [
     BrowserModule,
