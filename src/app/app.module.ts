@@ -12,11 +12,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 
+
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
 import { FormsModule } from '@angular/forms';
 
 import { DashCarouselComponent } from './dashboard/dash-carousel/dash-carousel.component';
 import { DashDateComponent } from './dashboard/dash-date/dash-date.component';
 import { DashBirthdaysComponent } from './dashboard/dash-birthdays/dash-birthdays.component';
+
 
 
 @NgModule({
@@ -37,7 +43,12 @@ import { DashBirthdaysComponent } from './dashboard/dash-birthdays/dash-birthday
   imports: [
     BrowserModule,
     AppRoutingModule,
+
+    HttpClientModule,
+    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
+
     FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
