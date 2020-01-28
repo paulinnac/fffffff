@@ -1,10 +1,14 @@
-<div>
+<div><!--*ngIf="topics"-->
     <h1>Topics Due Date</h1>
     <table>
         <th>DueDate</th>
         <th>Description</th>
-        <tr *ngFor="let topic of topics">
-            <td>{{topic.dueDate}}</td><td>{{topic.description}}</td>
+        <th>Link</th>
+        <tr *ngFor="let topic of topics" #topic>
+            <td><input type="date" value="{{topic.dueDate}}" #dueDate></td>
+            <td><input type="text" value="{{topic.description}}" #description></td>
+            <td><input type="text" value="{{topic.link}}" #link></td>
+            <!--td>{{topic.dueDate}}</!--td><td><a href="{{topic.description}}">{{topic.description}}</a></td-->
         </tr>
     </table>
     <button (click)="updateTopics()">Update</button>

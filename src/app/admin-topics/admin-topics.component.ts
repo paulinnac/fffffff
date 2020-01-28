@@ -7,19 +7,55 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminTopicsComponent implements OnInit {
 
-  topics: Topic[];
+  //topics: Topic[];
+  topics: Topic[] = [
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+    {description: 'link', dueDate: '01/01/2020', link: 'hppt://link'},
+  ];
+  
 
-  constructor() { }
+  constructor() { console.log("AdminTopicsComponent constructor"); }
 
-  ngOnInit() {
-  }
+  ngOnInit() { console.log(this.topics); console.log(this.getCurrentDate()); }
 
   updateTopics(topics: Topic[]) {
-    this.topics = topics;
+    console.log(topics);
+    topics.forEach(topic => {
+      //if (document.getElementById("topic").value 
+      topics.push(topic);
+    });
+    this.showValues();
+  }
+
+  showValues() {
+    console.log(this.topics);
+  }
+
+  validateDueDate(currentDate: Date) {
+    this.topics.forEach(topic => {
+      if(topic.dueDate.valueOf() > currentDate.toDateString().valueOf()) {
+        //Highlight element in table
+      }
+    });
+  }
+
+  getCurrentDate() {
+    let today = new Date();
+    console.log("fecha actual" + today);
+    return today;
   }
 
 }
 class Topic{
-  dueDate: string;
-  description: String;
+  constructor(public description: string, public dueDate: string, public link: string) { }
 }
