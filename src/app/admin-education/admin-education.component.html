@@ -1,14 +1,20 @@
-<div *ngIf="courses">
-    <h1>Education Due Date</h1>
-    <table id="coursesTable">
-        <th>DueDate</th>
-        <th>Description</th>
-        <th>Link</th>
-        <tr *ngFor="let course of courses">
-            <td><input type="date" value="{{course.dueDate}}"></td>
-            <td><input type="text" value="{{course.description}}"></td>
-            <td><input type="text" value="{{course.link}}"></td>
-        </tr>
-    </table>
-    <button (click)="updateCourses()">Update</button>
+<div class="container">
+    <div class="jumbotron">
+        <h2 class="text-center">Education due dates</h2>
+    </div>
+
+    <div *ngIf="courses">
+            <table id="coursesTable">
+                <th>DueDate</th>
+                <th>Description</th>
+                <th>Link</th>
+                <tr *ngFor="let course of courses">
+                    <td><input type="date" value="{{course.dueDate}}"></td>
+                    <td><input type="text" value="{{course.description}}"></td>
+                    <td><input type="text" value="{{course.link}}"></td>
+                </tr>
+            </table>
+            <button (click)="updateCourses()">Update</button>
+        </div>
+
 </div>
