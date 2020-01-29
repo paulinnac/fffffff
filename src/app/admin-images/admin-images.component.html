@@ -1,1 +1,28 @@
-<p>admin-images works!</p>
+<div class="container">
+       <div class="jumbotron">
+              <h2 class="text-center">Announcements</h2>
+       </div>
+       <div class="row">
+              <input type="file" accept="image/*" multiple (change)="fileChange($event)" enctype="multipart/form-data"
+                     #fileInput><br>
+              <!--For reacting to changes on file slection-->
+
+              <!--<button (click)="fileInput.click()">Select files</button>-->
+              <div *ngIf="fileUploadProgress">
+                     Upload progress: {{ fileUploadProgress }}
+              </div>
+              <div *ngFor="let url of urls" class="image-preview mb-3">
+                     <img [src]="url" height="160" width:auto /><br><br>
+              </div>
+              <div class="mb-3" *ngIf="uploadedFilePath">
+                     {{uploadedFilePath}}
+              </div><br>
+
+              <div>
+                     <button (click)="onUpload()">Upload</button>
+              </div>
+              <!--  <input type="submit" value="Agregar imagenes">-->
+              <!--<ion-icon name="images"></ion-icon>-->
+
+       </div>
+</div>
