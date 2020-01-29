@@ -35,8 +35,8 @@ export class AdminTopicsComponent implements OnInit {
    * Gets the values in Topics Due Date table and assigns them to this.topics array
    * @param topics 
    */
-  updateTopics(topics: any[]) {
-    console.log(topics);
+  updateTopics() {//topics: any[]) {
+    //console.log(topics);
     this.showValues();
   }
 

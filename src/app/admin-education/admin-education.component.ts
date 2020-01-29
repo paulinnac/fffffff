@@ -35,8 +35,8 @@ export class AdminEducationComponent implements OnInit {
    * Gets the values in Education Due Date table and assigns them to this.courses array
    * @param topics 
    */
-  updateCourses(courses: any[]) {
-    console.log(courses);
+  updateCourses() {//courses: any[]) {
+    //console.log(courses);
     this.showValues();
   }
 
