@@ -11,6 +11,26 @@ import { AdminSlackComponent } from './admin-slack/admin-slack.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+
+
+import { HttpClientModule }    from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+import { FormsModule } from '@angular/forms';
+
+import { DashCarouselComponent } from './dashboard/dash-carousel/dash-carousel.component';
+import { DashDateComponent } from './dashboard/dash-date/dash-date.component';
+import { DashBirthdaysComponent } from './dashboard/dash-birthdays/dash-birthdays.component';
+
+
 
 @NgModule({
   declarations: [
@@ -22,11 +42,28 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AdminSlackComponent,
     DashboardComponent,
     AdminMenuComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DashCarouselComponent,
+    DashDateComponent,
+    DashBirthdaysComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+
+    HttpClientModule,
+    //HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {dataEncapsulation: false}),
+
+    FormsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
