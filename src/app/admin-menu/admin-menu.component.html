@@ -1,33 +1,34 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <mat-toolbar >
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>
       <div>
         <img src="../../../images/ibm-logo2.png">
       </div>
     </mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item>Images</a>
-      <a mat-list-item >Birthdays</a>
-      <a mat-list-item >Education</a>
-      <a mat-list-item>Topics</a>
-      <a mat-list-item >Slack</a>
+      <a mat-list-item (click)="menuSelectorHandler(0)">Images</a>
+      <a mat-list-item (click)="menuSelectorHandler(1)">Birthdays</a>
+      <a mat-list-item (click)="menuSelectorHandler(2)">Education</a>
+      <a mat-list-item (click)="menuSelectorHandler(3)">Topics</a>
+      <a mat-list-item (click)="menuSelectorHandler(4)">Slack</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
-      <button
-        type="button"
-        aria-label="Toggle sidenav"
-        mat-icon-button
-        (click)="drawer.toggle()"
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>CIC Now - AASU-Anuncios - ADMIN PAGE</span>
     </mat-toolbar>
-    <!-- Add Content Here -->
+    <div class="container-fluid">
+      <app-admin-images *ngIf="optionSelector[0]"></app-admin-images>
+      <app-admin-birthdays *ngIf="optionSelector[1]"></app-admin-birthdays>
+      <app-admin-education *ngIf="optionSelector[2]"></app-admin-education>
+      <app-admin-topics *ngIf="optionSelector[3]"></app-admin-topics>
+      <app-admin-slack *ngIf="optionSelector[4]"></app-admin-slack>
+    </div>
+
   </mat-sidenav-content>
 </mat-sidenav-container>
